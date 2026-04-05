@@ -23,15 +23,15 @@ To ensure reliability and transparency, NYX was benchmarked against a verified i
 ## 🚀 Roadmap
 * [ ] **Web Server Analysis:** Support for `access.log` to detect directory brute-forcing and SQL injection attempts.
 
-* **1. Setup:
-* **git clone https://github.com/tushishvili/NYX.git
-* **cd NYX
+## 📦 Usage
 
-* **2. See Usage & Flags:
-* **python3 nyx.py --help
+1. **Setup:**
+`git clone https://github.com/tushishvili/NYX.git && cd NYX`
 
-* **3. View Results: 
-* **Check the formatted .txt report generated in the reports/ folder.
+2. **See Usage & Flags:**
+`python3 nyx.py --help`
+
+3. **View Results:** Check the formatted `.txt` report generated in the `reports/` folder.
 
 ## ⚙️ Config (config.py)
 Modify detection sensitivity to match your environment:
