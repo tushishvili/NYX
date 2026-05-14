@@ -14,8 +14,7 @@ Linux logs often record an event (like a failed password) without repeating the 
 
 ### 2. Look-Ahead Logic & Suppression Handling
 When a log shows `message repeated 5 times`, most tools see 1 event.
-* **The Forensic Multiplier:** NYX uses look-ahead logic to detect these strings. It mathematically reconstructs the 5 missing attempts, re-injecting them into the telemetry to ensure your **Strike Accuracy** and **Volume Thresholds** are 100% true to reality.
-
+* **The Forensic Multiplier:** NYX uses look-ahead logic to detect these strings. It mathematically reconstructs the 5 missing attempts, re-injecting them into the telemetry improving accuracy of **event reconstruction** and **volume-based detection** logic
 ### 3. Breach Pattern Recognition (Triage)
 NYX doesn't just look for failures; it looks for **transitions**.
 * It tracks IP behavior history. If an IP has 50 failures followed by a single `Accepted password`, NYX flags this as a **Critical Breach**, providing the exact timestamp the perimeter was crossed.
