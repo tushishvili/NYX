@@ -17,19 +17,18 @@ When a log shows `message repeated 5 times`, most tools see 1 event.
 * **The Forensic Multiplier:** NYX uses look-ahead logic to detect these strings. It mathematically reconstructs the 5 missing attempts, re-injecting them into the telemetry improving accuracy of **event reconstruction** and **volume-based detection** logic
 ### 3. Breach Pattern Recognition (Triage)
 NYX doesn't just look for failures; it looks for **transitions**.
-* It tracks IP behavior history. If an IP has 50 failures followed by a single `Accepted password`, NYX flags this as a **Critical Breach**, providing the exact timestamp the perimeter was crossed.
+* It tracks IP behavior history. If an IP has 50 failures followed by a single `Accepted password`, NYX flags this as a **Critical Breach**.
 
 ## ⚡ Performance
-Engineered for rapid triage in high-traffic enterprise environments.
-* **Enterprise Benchmark:** Processed **800,000+ lines in ~4.5s** (Benchmark: Apple M3 | Python 3.9.6).
-* **High-Speed Triage:** 7,100+ lines processed in **~0.05s**.
-* **Overhead:** Near-zero (~0.01s) when handling native `.log.gz` (rotated) compression.
+Processed large auth.log datasets efficiently (tested on ~800k+ line logs on Apple M3 hardware)
+* **High-Speed Triage:** 800k+ lines processed in **~4.5s**.
+* **Overhead:**  Low overhead during processing of standard and compressed log files (`.log.gz`).
 
 ## 🛠 Features
 * **Smart Detection:** Multi-layered alerts for **Bursts** (velocity-based) and **High Volume** (persistence-based).
 * **Automated Reporting:** Generates structured technical summaries in the `reports/` folder, designed for immediate SOC triage and incident documentation.
 * **Transparent Whitelisting:** Authorized IPs are tagged with a `WHITELIST` status, allowing you to audit "authorized" behavior for credential misuse.
-* **Critical User Monitoring:** Hard-coded monitoring for high-value targets like `root`, `postgres`, or `admin`.
+* **Critical User Monitoring:** Optional monitoring of high-value accounts such as`root`, `postgres`, or `admin`.
 
 ## 📊 Sample Output
 ![NYX Forensic Report](./assets/sample.png)
