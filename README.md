@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-**NYX** is a high-speed, stateful forensic tool designed to transform raw, fragmented Linux `auth.log` data into actionable security intelligence. While standard parsers simply count lines, NYX reconstructs the attack lifecycle using PID tracking and look-ahead logic.
+**NYX** is a stateful forensic log analysis tool for Linux auth.log files, designed to extract structured security insights from raw authentication data. While standard parsers simply count lines, NYX reconstructs the attack lifecycle using PID tracking and look-ahead logic.
 
 ## 🧠 How It Works: The "Stateful" Advantage
 Most log parsers fail when SSH sessions are fragmented or when logs are suppressed. NYX solves this through three core architectural pillars:
